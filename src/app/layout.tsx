@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Nunito_Sans, Open_Sans, Prompt } from "next/font/google"
 import "./globals.css"
+import { ThemeProvider } from "@/providers/theme-provider"
 
 const openSans = Open_Sans({
   variable: "--font-open-sans",
@@ -47,11 +48,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" suppressHydrationWarning>
       <body
         className={`${openSans.variable} ${nunitoSans.variable} ${prompt.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   )
