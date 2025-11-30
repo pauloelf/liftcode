@@ -51,11 +51,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
+    <html data-scroll-behavior="smooth" lang="pt-BR" suppressHydrationWarning>
       <body
         className={`${openSans.variable} ${nunitoSans.variable} ${prompt.variable} antialiased`}
       >
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <div className="relative min-h-screen">{children}</div>
+        </ThemeProvider>
       </body>
     </html>
   )
