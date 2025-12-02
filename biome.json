@@ -43,7 +43,9 @@
         "noLabelWithoutControl": "off",
         "useSemanticElements": "off",
         "noPositiveTabindex": "off",
-        "useAriaPropsSupportedByRole": "off"
+        "useAriaPropsSupportedByRole": "off",
+        "noStaticElementInteractions": "off",
+        "useKeyWithClickEvents": "off"
       }
     },
     "domains": {
