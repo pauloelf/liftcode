@@ -34,13 +34,6 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --color-degrade-skeleton: linear-gradient(
-    90deg,
-    var(--muted),
-    color-mix(in srgb, var(--accent), transparent 90%) 50%,
-    var(--muted)
-  );
-
   --text-f0: clamp(0.75rem, 1vw, 0.875rem);
   --text-f1: clamp(0.875rem, 1.2vw, 1rem);
   --text-f2: clamp(1rem, 1.5vw, 1.25rem);
@@ -265,14 +258,36 @@
   --ring: oklch(0.56 0.2 210);
 }
 
+html.light {
+  color-scheme: light;
+}
+html.dark {
+  color-scheme: dark;
+}
+html.forest {
+  color-scheme: light;
+}
+html.dracula {
+  color-scheme: dark;
+}
+html.ember {
+  color-scheme: light;
+}
+html.neon {
+  color-scheme: dark;
+}
+html.ocean {
+  color-scheme: light;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50 font-text;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background selection:bg-foreground text-foreground selection:text-background;
   }
-  html {
+  html[data-scroll-behavior="smooth"] {
     scroll-behavior: smooth;
   }
   h1,
@@ -280,7 +295,9 @@
   h3,
   h4,
   h5,
-  h6 {
+  h6,
+  a,
+  button {
     @apply font-primary;
   }
   a,
@@ -305,8 +322,62 @@
 
   .max-container {
     width: 100%;
-    max-width: 1024px;
+    max-width: 1280px;
     padding: 0 1rem;
     margin: 0 auto;
+  }
+}
+
+@layer utilities {
+  ::-webkit-scrollbar {
+    @apply size-2;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-accent/5;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground rounded-md;
+  }
+  html {
+    scrollbar-color: var(--color-muted-foreground)
+      color-mix(in srgb, var(--accent), transparent 95%);
+    scrollbar-width: thin;
+  }
+  .gradient-skeleton {
+    background-color: var(--bg-accent);
+    background-image: linear-gradient(
+      90deg,
+      var(--muted) 0%,
+      color-mix(in srgb, var(--accent), transparent 85%) 50%,
+      var(--muted) 100%
+    );
+    background-size: 200%;
+    animation: skeleton 1.8s ease-in-out infinite;
+    will-change: background-position;
+  }
+
+  @keyframes skeleton {
+    0% {
+      background-position: 150%;
+    }
+    100% {
+      background-position: -50%;
+    }
+  }
+  .gradient-hero {
+    background: linear-gradient(
+      135deg,
+      var(--background) 0%,
+      var(--secondary) 50%,
+      var(--muted) 100%
+    );
+  }
+  .gradient-section {
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      color-mix(in srgb, var(--primary), transparent 95%) 50%,
+      transparent 100%
+    );
   }
 }
