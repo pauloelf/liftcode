@@ -4,7 +4,6 @@ import {
   MoreHorizontalIcon,
 } from "lucide-react"
 import type * as React from "react"
-import { type Button, buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 function Pagination({ className, ...props }: React.ComponentProps<"nav">) {
@@ -24,7 +23,10 @@ function PaginationContent({
 }: React.ComponentProps<"ul">) {
   return (
     <ul
-      className={cn("flex flex-row items-center gap-1", className)}
+      className={cn(
+        "flex flex-row items-center bg-accent/10 rounded-md",
+        className,
+      )}
       data-slot="pagination-content"
       {...props}
     />
@@ -37,23 +39,19 @@ function PaginationItem({ ...props }: React.ComponentProps<"li">) {
 
 type PaginationLinkProps = {
   isActive?: boolean
-} & Pick<React.ComponentProps<typeof Button>, "size"> &
-  React.ComponentProps<"a">
+} & React.ComponentProps<"button">
 
 function PaginationLink({
   className,
   isActive,
-  size = "icon",
   ...props
 }: PaginationLinkProps) {
   return (
-    <a
+    <button
       aria-current={isActive ? "page" : undefined}
       className={cn(
-        buttonVariants({
-          variant: isActive ? "secondary" : "ghost",
-          size,
-        }),
+        "size-9 inline-flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 disabled:bg-secondary [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] text-bold font-secondary",
+        isActive ? "bg-accent/70 text-accent-foreground" : "hover:bg-accent/10",
         className,
       )}
       data-active={isActive}
@@ -70,12 +68,10 @@ function PaginationPrevious({
   return (
     <PaginationLink
       aria-label="Go to previous page"
-      className={cn("gap-1 px-2.5 sm:pl-2.5", className)}
-      size="default"
+      className={cn(className)}
       {...props}
     >
       <ChevronLeftIcon />
-      <span className="hidden sm:block"></span>
     </PaginationLink>
   )
 }
@@ -87,11 +83,9 @@ function PaginationNext({
   return (
     <PaginationLink
       aria-label="Go to next page"
-      className={cn("gap-1 px-2.5 sm:pr-2.5", className)}
-      size="default"
+      className={cn(className)}
       {...props}
     >
-      <span className="hidden sm:block"></span>
       <ChevronRightIcon />
     </PaginationLink>
   )
