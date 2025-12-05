@@ -14,6 +14,7 @@ interface PostCardProps {
 export function PostCard({ post, index }: PostCardProps) {
   return (
     <motion.a
+      className="group outline-none"
       exit="exit"
       href={`https://commit-blog-paulodev.vercel.app/topicos/${post.slug}`}
       initial="hidden"
@@ -23,13 +24,13 @@ export function PostCard({ post, index }: PostCardProps) {
       viewport={{ once: true }}
       whileInView="visible"
     >
-      <Card className="group">
+      <Card className="hover:shadow-xl border-border/50 hover:border-accent/70 group-focus-visible:border-accent/30 group-focus-visible:ring-2 group-focus-visible:ring-ring/50 transition-all">
         <CardContent className="space-y-4">
           <div className="flex justify-between items-center">
             <Badge variant="secondary">{post.category.name}</Badge>
           </div>
           <h3
-            className="font-bold text-f2 group-hover:text-accent line-clamp-2 text-balance transition-colors"
+            className="font-bold text-f2 group-focus-visible:text-accent group-hover:text-accent line-clamp-2 text-balance transition-colors"
             title={post.title}
           >
             {post.title}
@@ -47,7 +48,7 @@ export function PostCard({ post, index }: PostCardProps) {
               {formatDate(post.createdAt)}
             </span>
 
-            <ArrowRight className="w-5 h-5 text-accent transition-transform group-hover:translate-x-2" />
+            <ArrowRight className="w-5 h-5 text-accent transition-transform group-focus-visible:translate-x-2 group-hover:translate-x-2" />
           </div>
         </CardContent>
       </Card>
