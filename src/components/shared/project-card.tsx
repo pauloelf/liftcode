@@ -1,10 +1,7 @@
-"use client"
-
-import { motion } from "framer-motion"
 import { ArrowRight, ExternalLink, Github } from "lucide-react"
+import * as motion from "motion/react-client"
 import Image from "next/image"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
 import type { Project } from "@/@types/project-types"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -17,11 +14,10 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
-  const pathname = usePathname()
   const isEven = index % 2 === 0
 
   return (
-    <div className="group" key={pathname}>
+    <div className="group">
       <div
         className={`flex flex-col ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"} gap-8 items-center`}
       >
