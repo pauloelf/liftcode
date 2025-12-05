@@ -21,12 +21,11 @@ export function FeaturedProjects({ projects }: { projects: Project[] }) {
     >
       <div className="absolute inset-0 gradient-section" />
 
-      <div className="relative max-container">
+      <div className="relative max-container" key={pathname}>
         <motion.div
           className="mb-16 text-center"
           exit="exit"
           initial="hidden"
-          key={pathname}
           transition={{ duration: 0.6 }}
           variants={fadeUp(40)}
           viewport={{ once: true }}
