@@ -58,7 +58,7 @@ export function HeroSection() {
                 <Link className="scroll-smooth" href="/projetos" tabIndex={-1}>
                   <Button className="group" size="lg">
                     Ver projetos
-                    <ArrowRight className="transition-transform group-hover:translate-x-1" />
+                    <ArrowRight className="transition-transform group-focus-visible:translate-x-1 group-hover:translate-x-1" />
                   </Button>
                 </Link>
                 <Link href="#contato" tabIndex={-1}>

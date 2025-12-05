@@ -55,7 +55,7 @@ export function FeaturedProjects({ projects }: { projects: Project[] }) {
           <Link href="/projetos" tabIndex={-1}>
             <Button className="group" size="lg">
               Ver todos os projetos
-              <ArrowRight className="transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="transition-transform group-focus-visible:translate-x-1 group-hover:translate-x-1" />
             </Button>
           </Link>
         </motion.div>

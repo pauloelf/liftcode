@@ -53,7 +53,7 @@ export function LatestPosts({ posts }: { posts: Post[] }) {
           >
             <Button className="group" size="lg">
               Ver todos os posts
-              <ArrowRight className="transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="transition-transform group-focus-visible:translate-x-1 group-hover:translate-x-1" />
             </Button>
           </Link>
         </motion.div>

@@ -66,7 +66,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             <Link href={project.postURL} tabIndex={-1} target="_blank">
               <Button className="group/btn" size="sm" variant="link">
                 Ver mais
-                <ArrowRight className="transition-transform group-hover/btn:translate-x-1" />
+                <ArrowRight className="transition-transform group-focus-visible/btn:translate-x-1 group-hover/btn:translate-x-1" />
               </Button>
             </Link>
           </div>
