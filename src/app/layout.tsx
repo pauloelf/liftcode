@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import { Nunito_Sans, Open_Sans, Prompt } from "next/font/google"
 import "./globals.css"
+import { DecorativeElements } from "@/components/layout/decorative-pattern"
+import { Header } from "@/components/layout/header"
 import { ThemeProvider } from "@/providers/theme-provider"
 
 const openSans = Open_Sans({
@@ -56,7 +58,11 @@ export default function RootLayout({
         className={`${openSans.variable} ${nunitoSans.variable} ${prompt.variable} antialiased`}
       >
         <ThemeProvider>
-          <div className="relative min-h-screen">{children}</div>
+          <div className="relative min-h-screen">
+            <Header />
+            <DecorativeElements />
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>
