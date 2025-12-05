@@ -1,0 +1,23 @@
+import type * as React from "react"
+
+export type Project = {
+  id: number
+  title: string
+  description: string
+  tags: string
+  postURL: string
+  codeURL: string
+  deployURL: string
+  image: {
+    alternativeText: string
+    url: string
+    width: number
+    height: number
+  }
+}
+
+export type ProjectsPaginationProps = {
+  total: number
+  setCurrent: React.Dispatch<React.SetStateAction<number>>
+  current: number
+}
