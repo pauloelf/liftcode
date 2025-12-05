@@ -33,8 +33,10 @@ export function HeroSection() {
               >
                 Olá, eu sou
               </motion.p>
-              <h1 className="bg-clip-text bg-linear-to-br from-foreground via-foreground to-accent mb-3 md:mb-5 lg:mb-6 font-bold text-f8 text-transparent sm:text-f10 md:text-f11 lg:text-8xl text-balance">
-                Paulo Sérgio
+              <h1 className="mb-3 md:mb-5 lg:mb-6 font-bold text-f8 sm:text-f10 md:text-f11 lg:text-8xl text-balance">
+                <span className="bg-clip-text bg-linear-to-br from-foreground via-foreground to-accent font-primary text-transparent">
+                  Paulo Sérgio
+                </span>
               </h1>
               <p className="mb-5 md:mb-7 lg:mb-8 text-f3 text-muted-foreground md:text-f4">
                 Desenvolvedor Front-End
