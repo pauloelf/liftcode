@@ -1,0 +1,8 @@
+export { FigmaIcon } from "./FigmaIcon"
+export { GitIcon } from "./GitIcon"
+export { JavascriptIcon } from "./JavascriptIcon"
+export { NextjsIcon } from "./NextjsIcon"
+export { NodejsIcon } from "./NodejsIcon"
+export { ReactjsIcon } from "./ReactjsIcon"
+export { TailwindcssIcon } from "./TailwindcssIcon"
+export { TypescriptIcon } from "./TypescriptIcon"
