@@ -46,6 +46,28 @@
   --text-f9: clamp(3rem, 5vw, 3.5rem);
   --text-f10: clamp(3.5rem, 6vw, 4rem);
   --text-f11: clamp(4rem, 8vw, 5rem);
+
+  --animate-infinite-scroll: infinite-scroll 5s infinite linear;
+
+  --animate-marquee: marquee var(--duration) infinite linear;
+
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
 }
 
 :root {
@@ -354,15 +376,6 @@ html.ocean {
     background-size: 200%;
     animation: skeleton 1.8s ease-in-out infinite;
     will-change: background-position;
-  }
-
-  @keyframes skeleton {
-    0% {
-      background-position: 150%;
-    }
-    100% {
-      background-position: -50%;
-    }
   }
   .gradient-hero {
     background: linear-gradient(
