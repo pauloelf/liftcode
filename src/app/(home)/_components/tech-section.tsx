@@ -34,7 +34,7 @@ export function TechSection() {
     <section className="relative py-32 overflow-hidden" id="tecnologias">
       <div className="absolute inset-0 gradient-section" />
 
-      <div className="relative" key={pathname}>
+      <div className="relative max-container" key={pathname}>
         <motion.div
           className="mb-16 text-center"
           exit="exit"
@@ -54,7 +54,6 @@ export function TechSection() {
 
         <AnimatePresence>
           <motion.div
-            className="max-container"
             exit="exit"
             initial="hidden"
             transition={{
