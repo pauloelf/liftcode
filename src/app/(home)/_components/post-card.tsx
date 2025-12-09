@@ -24,7 +24,7 @@ export function PostCard({ post, index }: PostCardProps) {
       viewport={{ once: true }}
       whileInView="visible"
     >
-      <Card className="hover:shadow-xl border-border/50 hover:border-accent/70 group-focus-visible:border-accent/30 group-focus-visible:ring-2 group-focus-visible:ring-ring/50 transition-all">
+      <Card className="hover:shadow-xl border-border/50 hover:border-accent/70 group-focus-visible:border-accent/30 group-focus-visible:ring-2 group-focus-visible:ring-accent/50 transition-all">
         <CardContent className="space-y-4">
           <div className="flex justify-between items-center">
             <Badge variant="secondary">{post.category.name}</Badge>
