@@ -21,3 +21,7 @@ export async function getPosts() {
   )
   return (await response.json()).data
 }
+
+export async function getCurrentYear() {
+  return new Date().getFullYear()
+}
