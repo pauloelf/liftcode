@@ -2,7 +2,9 @@ import type { Metadata } from "next"
 import { Nunito_Sans, Open_Sans, Prompt } from "next/font/google"
 import "./globals.css"
 import { DecorativeElements } from "@/components/layout/decorative-pattern"
+import { Footer } from "@/components/layout/footer"
 import { Header } from "@/components/layout/header"
+import { Toaster } from "@/components/ui/sonner"
 import { ThemeProvider } from "@/providers/theme-provider"
 
 const openSans = Open_Sans({
@@ -59,9 +61,11 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <div className="relative min-h-screen">
+            <Toaster />
             <Header />
             <DecorativeElements />
             {children}
+            <Footer />
           </div>
         </ThemeProvider>
       </body>
