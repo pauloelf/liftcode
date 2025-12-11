@@ -30,7 +30,7 @@ export function PostCard({ post, index }: PostCardProps) {
             <Badge variant="secondary">{post.category.name}</Badge>
           </div>
           <h3
-            className="font-bold text-f2 group-focus-visible:text-accent group-hover:text-accent line-clamp-2 text-balance transition-colors"
+            className="font-bold text-f2 group-focus-visible:text-accent group-hover:text-accent text-ellipsis line-clamp-2 md:line-clamp-1 text-balance transition-colors"
             title={post.title}
           >
             {post.title}
