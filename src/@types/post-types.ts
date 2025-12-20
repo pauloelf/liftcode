@@ -4,7 +4,5 @@ export type Post = {
   description: string
   createdAt: string
   slug: string
-  category: {
-    name: string
-  }
+  category: string
 }
