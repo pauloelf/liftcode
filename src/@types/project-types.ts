@@ -1,7 +1,7 @@
 import type * as React from "react"
 
 export type Project = {
-  id: number
+  id: string
   title: string
   description: string
   tags: string[]
