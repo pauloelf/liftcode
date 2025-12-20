@@ -27,7 +27,7 @@ export function PostCard({ post, index }: PostCardProps) {
       <Card className="hover:shadow-xl border-border/50 hover:border-accent/70 group-focus-visible:border-accent/30 group-focus-visible:ring-2 group-focus-visible:ring-accent/50 transition-all">
         <CardContent className="space-y-4">
           <div className="flex justify-between items-center">
-            <Badge variant="secondary">{post.category.name}</Badge>
+            <Badge variant="secondary">{post.category}</Badge>
           </div>
           <h3
             className="font-bold text-f2 group-focus-visible:text-accent group-hover:text-accent text-ellipsis line-clamp-2 md:line-clamp-1 text-balance transition-colors"

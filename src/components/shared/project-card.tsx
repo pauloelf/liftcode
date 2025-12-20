@@ -40,11 +40,10 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           </div>
 
           <div className="flex flex-wrap gap-2">
-            {project.tags.split(",").map((tag) => {
-              const tagFormatted = tag.slice(1, -1).replaceAll('"', "").trim()
+            {project.tags.map((tag) => {
               return (
-                <Badge key={tagFormatted} variant="secondary">
-                  {tagFormatted}
+                <Badge key={tag} variant="secondary">
+                  {tag}
                 </Badge>
               )
             })}
@@ -87,11 +86,10 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             ratio={16 / 9}
           >
             <Image
-              alt={project.image.alternativeText}
+              alt={project.image.alt_text}
               className="object-cover group-hover:scale-105 transition-transform duration-500"
-              height={project.image.height}
-              src={project.image.url}
-              width={project.image.width}
+              fill
+              src={project.image.src}
             />
             <div className="absolute inset-0 bg-linear-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
           </AspectRatio>
